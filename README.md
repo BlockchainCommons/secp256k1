@@ -1,3 +1,21 @@
+lipsecp256k1-schnorrsig
+=======================
+
+BIP-340 Schnorr Signatures
+--------------------------
+
+This is a fork of the essential Bitcoin-Core https://github.com/bitcoin-core/secp256k1 library based on @jonasnick's long-running schnorrsig branch (https://github.com/bitcoin-core/secp256k1/pull/558) that implemented [BIP-340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki) (aka BIP-Schnorr) compliant signatures, after the x-only changes (32 byte public keys) and other minor tweaks to BIP-340 as of 2013-09-13.
+
+WARNING: It is intended SOLELY to ease experimentation with Schnorr signatures by using it as `git submodules` in other projects. Until Schnorr Signature support in secp256k1 is merged into Bitcoin, do not rely on this libary for production code as the spec might change (again). This will likely only happen after taproot is added to Bitcoin-Core. There also may be other security fixes or improvements that will be merged into https://github.com/bitcoin-core/secp256k1 when bitcoin-core community approves a PR that includes Schnorr Signatures.
+
+SecQ
+----
+In addition, this repository holds in issue https://github.com/BlockchainCommons/secp256k1-schnorrsig/issues/1 some thoughts about using a mirror curve to secp256k1 known as SecQ, which would enable some very interesting new bulletproofs. No code in this fork has been changed to support this concept.
+
+Building on macOS
+-----------------
+Don't forget to `brew install automake autoconf libtool`
+
 libsecp256k1
 ============
 
